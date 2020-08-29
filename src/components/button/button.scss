@@ -1,0 +1,36 @@
+.button {
+    background-color: hsla(0, 0%, 100%, 0.3);
+    border-width: 1px;
+    color: #363636;
+    cursor: pointer;
+    justify-content: center;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(0.5em - 1px);
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 4px;
+    display: inline-flex;
+    &:focus{
+        outline: none;
+    }
+    &.is-small {
+        border-radius: 2px;
+        font-size: 0.75rem;
+    }
+    &.is-normal {
+        font-size: 1rem;
+    }
+    &.is-medium {
+        font-size: 1.25rem;
+    }
+    &.is-large {
+        font-size: 1.5rem;
+    }
+    >span{
+        margin-left: 5px;
+    }
+    
+
+}
