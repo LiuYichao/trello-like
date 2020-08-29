@@ -1,0 +1,33 @@
+.list-card {
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+    padding: 6px 8px 2px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    max-width: 300px;
+    min-height: 20px;
+    position: relative;
+    text-decoration: none;
+    z-index: 0;
+    > .add-button {
+        height: 22px;
+        cursor: pointer;
+        margin: 4px 8px;
+        z-index: 12;
+    }
+    > .list-card-title {
+        clear: both;
+        display: block;
+        margin: 0 0 4px;
+        overflow: hidden;
+        text-decoration: none;
+        word-wrap: break-word;
+        color: #172b4d;
+    }
+    &:hover {
+        background-color: #f4f5f7;
+    }
+}

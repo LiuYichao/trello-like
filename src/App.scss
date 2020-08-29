@@ -15,13 +15,87 @@ body {
             padding: 2px;
             background-color: rgba(0, 0, 0, 0.32);
             position: relative;
-            button{
+            button {
                 margin-right: 2px;
             }
         }
 
         > .AppBody {
             width: 100%;
+            > .board {
+                margin: 0.5rem 0.1rem;
+                display: flex;
+                .list-wrapper {
+                    display: flex;
+                    height: 100%;
+                    overflow: hidden;
+                    flex-direction: column;
+                    background-color: #ebecf0;
+                    margin-left: 0.4rem;
+                    width: 272px;
+                    border-radius: 3px;
+                    > .list-header {
+                        display: flex;
+                        justify-content: space-between;
+                        p {
+                            margin: 0px;
+                            box-shadow: none;
+                            font-weight: 600;
+                            min-height: 20px;
+                            padding: 4px 8px;
+                            overflow: hidden;
+                            overflow-wrap: break-word;
+                            height: 28px;
+                        }
+                        > .add-button {
+                            height: 25px;
+                            cursor: pointer;
+                            margin: 4px 8px;
+                        }
+                    }
+                    > .list-cards {
+                        flex: 1 1 auto;
+                        margin-bottom: 0;
+                        margin: 0 4px;
+                        padding: 0 4px;
+                        z-index: 1;
+                        min-height: 0;
+                        .list-card {
+                            background-color: #fff;
+                            border-radius: 3px;
+                            box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+                            padding: 6px 8px 2px;
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 8px;
+                            max-width: 300px;
+                            min-height: 20px;
+                            position: relative;
+                            text-decoration: none;
+                            z-index: 0;
+                            > .add-button {
+                                height: 22px;
+                                cursor: pointer;
+                                margin: 4px 8px;
+                                z-index: 12;
+                            }
+                            > .list-card-title {
+                                clear: both;
+                                display: block;
+                                margin: 0 0 4px;
+                                overflow: hidden;
+                                text-decoration: none;
+                                word-wrap: break-word;
+                                color: #172b4d;
+                            }
+                            &:hover {
+                                background-color: #f4f5f7;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
