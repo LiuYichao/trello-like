@@ -79,6 +79,7 @@ const App: React.FC<AppProps> = props => {
         const idx = cards.findIndex((card: any) => {
           return card.cardId === action.payload;
         })
+        cards.splice(idx, 1);
         return {
           count: state.count - 1, list: {
             title: state.list.title,
@@ -90,18 +91,28 @@ const App: React.FC<AppProps> = props => {
         throw new Error();
     }
   }
+
   const [state, dispatch] = useReducer(reducer, listState);
+
   const addOnClick = (uuid: string) => {
+    setInputDivShow(true);
+  }
+
+  const addCard = () => {
     dispatch({
       type: "increment",
       payload: {
         cardId: "card" + (state.count + 1),
-        name: "test",
+        name: inputValue,
         description: "",
         task: []
       }
     });
+    setInputDivShow(false);
   }
+
+  const [inputValue, setInputValue] = useState("");
+  const [inputDivShow, setInputDivShow] = useState(false);
 
   return (
     <>
@@ -135,6 +146,10 @@ const App: React.FC<AppProps> = props => {
                   {state.list.title}
                 </p>
                 <button className="add-button" onClick={_ => { addOnClick(state.list.uuid) }}>+</button>
+                <div className={inputDivShow ? "list-title-input" : "list-title-input-none"}>
+                  <input value={inputValue} onChange={e => { setInputValue(e.target.value) }} placeholder="请输入任务名称" />
+                  <button onClick={addCard}>添加</button>
+                </div>
               </div>
               <div className="list-cards">
                 {state.list.cards.map(((card: any, idx2: number) => {

@@ -36,6 +36,7 @@ body {
                     border-radius: 3px;
                     > .list-header {
                         display: flex;
+                        position: relative;
                         justify-content: space-between;
                         p {
                             margin: 0px;
@@ -51,6 +52,16 @@ body {
                             height: 25px;
                             cursor: pointer;
                             margin: 4px 8px;
+                        }
+                        > .list-title-input{
+                            display: block;
+                            position: absolute;
+                            right: 0px;
+                            top: 20px;
+                            z-index: 14;
+                        }
+                        > .list-title-input-none{
+                            display: none;
                         }
                     }
                     > .list-cards {
